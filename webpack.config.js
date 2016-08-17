@@ -1,10 +1,13 @@
+var path = require('path')
+var webpack = require('webpack')
+
 module.exports = {
   devtool:'inline-source-map',
   entry: [
     './entry.js'
   ],
   output: {
-    path: __dirname,
+    path: path.join(__dirname, 'dist'),
     publicPath: '/',
     filename: 'bundle.js'
   },
