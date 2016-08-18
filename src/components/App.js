@@ -9,19 +9,37 @@ import {
 	Redirect,
 	withRouter
 } from 'react-router'
-
+import css from './App.css'
 const Links = ()=>
-    <nav>
-        <div><Link to='/'>Home</Link></div>
-        <div><Link to='/about'>About</Link></div>
-        <div><Link to='/search'>Search</Link></div>
+    <nav className={css.navbar}>
+        <div className={css.nav_button}><Link className={css.href} to='/'>Home</Link></div>
+        <div className={css.nav_button}><Link className={css.href} to='/about'>About</Link></div>
+        <div className={css.nav_button}><Link className={css.href} to='/search'>Search</Link></div>
     </nav>
 
+const Footer = ()=>
+    <footer className={css.footer}>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </footer>
 
-const Home = (props)=> <div><h1>Home</h1>{props.children}</div>
+
+
+const All = (props)=>
+    <div className={css.all}>
+        <div>
+
+        <Links/>
+        </div>
+        <div className={css.wrapper}>{props.children}</div>
+        <Footer/>
+    </div>
+
+const Home = ()=> <div><h1>Home</h1></div>
 const Search = ()=> <div><h1>Search</h1></div>
-const About = (props)=> <div><h1>About</h1>{props.children}</div>
-const All = (props)=> <div><h1><Links/></h1>{props.children}</div>
+const About = ()=> <div><h1>About</h1></div>
+
 export default class App extends Component{
     render(){
         return(

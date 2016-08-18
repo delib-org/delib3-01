@@ -19,13 +19,12 @@ module.exports = {
         presets: ['react', 'es2015','stage-0']
       }
     },
-    { test: /\.json$/, loader: 'json' }]
+    { test: /\.json$/, loader: 'json' },	  {
+		test:   /\.css$/,
+		loader: "style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]"
+	  }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
-  },
-  devServer: {
-    contentBase: './',
-    port:3000
   }
 };
